@@ -1,0 +1,268 @@
+/**
+ * Design Cart Column Scroll Gallery
+ * Author: Paweł Nosko — https://www.designcart.pl/pawel-nosko.html
+ * Company: Design Cart — https://www.designcart.pl/
+ */
+
+body.dccsg-admin #wpcontent {
+  padding-left: 0;
+}
+
+body.dccsg-admin .wrap {
+  margin: 0;
+}
+
+body.dccsg-admin #wpbody-content > .notice,
+body.dccsg-admin #wpbody-content > .updated,
+body.dccsg-admin #wpbody-content > .error {
+  margin: 16px 24px 0;
+}
+
+.dccsg-page .dc-field {
+  margin-bottom: 1.25rem;
+}
+
+.dccsg-page .dc-row {
+  margin-bottom: 1.25rem;
+}
+
+.dccsg-page .dc-row .dc-field {
+  margin-bottom: 0;
+}
+
+.dccsg-page .dc-field + .dc-hint,
+.dccsg-page .dc-row + .dc-hint {
+  margin-top: -0.65rem;
+  margin-bottom: 1.25rem;
+}
+
+.dccsg-page .dccsg-product .dc-row {
+  margin-bottom: 0;
+}
+
+.dccsg-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(31, 162, 140, 0.14), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 95% 0%, rgba(28, 167, 202, 0.12), transparent 50%),
+    linear-gradient(180deg, #eef4f3 0%, #f1f5f9 100%);
+  padding-bottom: 4rem;
+}
+
+.dccsg-size {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dccsg-size__units {
+  flex-wrap: wrap;
+}
+
+.dccsg-search {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.dccsg-search__results {
+  position: absolute;
+  z-index: 20;
+  left: 0;
+  right: 0;
+  top: calc(100% + 4px);
+  margin: 0;
+  padding: 0.35rem;
+  list-style: none;
+  background: #fff;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+  max-height: 280px;
+  overflow: auto;
+}
+
+.dccsg-search__item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  padding: 0.45rem 0.55rem;
+  border: 0;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+}
+
+.dccsg-search__item:hover {
+  background: rgba(31, 162, 140, 0.1);
+}
+
+.dccsg-search__thumb {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #e2e8f0;
+}
+
+.dccsg-source-bar {
+  margin-bottom: 1rem;
+}
+
+.dccsg-products {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dccsg-product {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: 0.85rem;
+  align-items: start;
+  padding: 0.9rem;
+  background: #fff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 12px;
+}
+
+.dccsg-product__handle {
+  cursor: grab;
+  color: #94a3b8;
+  margin-top: 0.35rem;
+}
+
+.dccsg-product__thumb {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #e2e8f0;
+}
+
+.dccsg-product__thumb--empty {
+  display: block;
+}
+
+.dccsg-product__title {
+  display: block;
+  margin-bottom: 0.55rem;
+}
+
+.dccsg-product__remove {
+  border: 0;
+  background: none;
+  color: #e5484d;
+  cursor: pointer;
+  padding: 0.2rem;
+}
+
+.dccsg-product__remove .dashicons {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 720px) {
+  .dccsg-product {
+    grid-template-columns: auto 1fr auto;
+  }
+  .dccsg-product__thumb {
+    display: none;
+  }
+}
+
+.dccsg-dashboard__lead {
+  margin: 0 0 1.5rem;
+  color: var(--dc-muted, #64748b);
+  font-size: 15px;
+}
+
+.dccsg-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.dccsg-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem 1.2rem 1.2rem;
+  background: linear-gradient(145deg, #fafcfd 0%, #f8fafc 100%);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.dccsg-tile__main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.dccsg-tile__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 0.45rem;
+  background: linear-gradient(135deg, rgba(31, 162, 140, 0.14), rgba(28, 167, 202, 0.12));
+  color: #1fa28c;
+  font-size: 20px;
+}
+
+.dccsg-tile__title {
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}
+
+.dccsg-tile__sub {
+  color: var(--dc-muted, #64748b);
+  font-size: 13px;
+}
+
+.dccsg-tile__code {
+  margin: 0;
+  padding: 0.45rem 0.65rem;
+  border: 1px dashed rgba(15, 23, 42, 0.16);
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+}
+
+.dccsg-tile__code--inline {
+  display: inline-flex;
+  vertical-align: middle;
+  margin-left: 0.35rem;
+}
+
+.dccsg-tile__code code {
+  font-size: 12px;
+  color: #1fa28c;
+}
+
+.dccsg-tile__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.dccsg-tile__actions form {
+  margin: 0;
+}
+
+.dccsg-tile__delete {
+  color: #e5484d;
+}

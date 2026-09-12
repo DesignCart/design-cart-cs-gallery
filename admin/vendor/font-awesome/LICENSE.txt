@@ -1,0 +1,7 @@
+Font Awesome 4.7.0
+Copyright Dave Gandy
+https://fontawesome.com
+
+Font License: SIL OFL 1.1
+Code License: MIT License
+Documentation License: CC BY 3.0
